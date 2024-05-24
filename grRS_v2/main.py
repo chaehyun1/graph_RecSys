@@ -119,5 +119,10 @@ print(f"NEW MODEL NDCG@K: {ndcg_at_k(new_group_gt_mat, new_group_results, g_neg,
 
 
 
- #python main.py --verbose=1 --user_alpha=1  --group_alpha=50 --alpha=0.6 --power=0.7 --filter_pair filter_1D_2D
+
+
+#python main.py --verbose=1 --user_alpha=1  --group_alpha=50 --alpha=0.6 --power=0.7 --filter_pair filter_1D_2D
+
+
+
 
