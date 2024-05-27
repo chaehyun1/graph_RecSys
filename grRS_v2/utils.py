@@ -11,35 +11,35 @@ def filter(P_bar_user, P_bar_group, user_alpha, group_alpha, filter_pair):
         return new_P
 
     elif filter_pair == 'filter_1D_2D':
-        new_P = user_alpha*P_bar_user + group_alpha*(2*P_bar_group - (P_bar_group)**2) 
+        new_P = user_alpha*P_bar_user + group_alpha*(2*P_bar_group - P_bar_group@P_bar_group) 
         return new_P
 
     elif filter_pair == 'filter_1D_3D':
-        new_P = user_alpha*P_bar_user + group_alpha *(P_bar_group + 0.1*((-1)*(P_bar_group)**3 + 10*(P_bar_group)**2 + (-29)*P_bar_group))
+        new_P = user_alpha*P_bar_user + group_alpha *(P_bar_group + (-1)*P_bar_group@P_bar_group@P_bar_group + 10*P_bar_group@P_bar_group+ (-29)*P_bar_group)
         return new_P
 
     elif filter_pair == 'filter_2D_1D':
-        new_P = user_alpha*(2*P_bar_user - (P_bar_user)**2) + group_alpha*P_bar_group
+        new_P = user_alpha*(2*P_bar_user - P_bar_user@P_bar_user) + group_alpha*P_bar_group
         return new_P
 
     elif filter_pair == 'filter_2D_2D':
-        new_P = user_alpha*(2*P_bar_user - (P_bar_user)**2) + group_alpha*(2*P_bar_group - (P_bar_group)**2)
+        new_P = user_alpha*(2*P_bar_user - P_bar_user@P_bar_user) + group_alpha*(2*P_bar_group - P_bar_group@P_bar_group)
         return new_P
 
     elif filter_pair == 'filter_2D_3D':
-        new_P = user_alpha*(2*P_bar_user - (P_bar_user)**2) + group_alpha*(P_bar_group + 0.1*((-1)*(P_bar_group)**3 + 10*(P_bar_group)**2 + (-29)*P_bar_group))
+        new_P = user_alpha*(2*P_bar_user - P_bar_user@P_bar_user) + group_alpha*(P_bar_group + (-1)*P_bar_group@P_bar_group@P_bar_group + 10*P_bar_group@P_bar_group + (-29)*P_bar_group)
         return new_P
 
     elif filter_pair == 'filter_3D_1D':
-        new_P = user_alpha*(P_bar_user + 0.1*((-1)*(P_bar_user)**3 + 10*(P_bar_user)**2 + (-29)*P_bar_user)) + group_alpha*P_bar_group
+        new_P = user_alpha*(P_bar_user + (-1)*P_bar_user@P_bar_user@P_bar_user + 10*P_bar_user@P_bar_user + (-29)*P_bar_user) + group_alpha*P_bar_group
         return new_P
 
     elif filter_pair == 'filter_3D_2D':
-        new_P = user_alpha*(P_bar_user + 0.1*((-1)*(P_bar_user)**3 + 10*(P_bar_user)**2 + (-29)*P_bar_user)) + group_alpha*(2*P_bar_group - (P_bar_group)**2)
+        new_P = user_alpha*(P_bar_user + (-1)*P_bar_user@P_bar_user@P_bar_user + 10*P_bar_user@P_bar_user + (-29)*P_bar_user) + group_alpha*(2*P_bar_group - P_bar_group@P_bar_group)
         return new_P
 
     elif filter_pair == 'filter_3D_3D':
-        new_P = user_alpha*(P_bar_user + 0.1*((-1)*(P_bar_user)**3 + 10*(P_bar_user)**2 + (-29)*P_bar_user)) + group_alpha*(P_bar_group + (-1)*(P_bar_group)**3 + 10*(P_bar_group)**2 + (-29)*P_bar_group)
+        new_P = user_alpha*(P_bar_user + (-1)*P_bar_user@P_bar_user@P_bar_user + 10*P_bar_user@P_bar_user + (-29)*P_bar_user) + group_alpha*(P_bar_group + (-1)*P_bar_group@P_bar_group@P_bar_group + 10*P_bar_group@P_bar_group + (-29)*P_bar_group)
         return new_P
 
 # def recall_at_k(gt_mat, results, k=10):
